@@ -4,19 +4,33 @@
 import { useState, useEffect } from 'react';
 // import localStorage from '../services/localStorage';
 // import '../styles/App.scss';
-import get from '../services/fetch';
+import getCharactersByHouseName from '../services/fetch';
+import CharacterList from './CharacterList';
+import Filters from './Filters';
 
 function App() {
   const [characters, setCharacters] = useState([]);
+  const [filterName, setFilterName] = useState('gryffindor');
+
+  const handleInput = (value) => {
+    setFilterName(value);
+  };
 
   useEffect(() => {
-    get.getCharactersByHouseName().then((charactersApi) => {
+    getCharactersByHouseName().then((charactersApi) => {
       console.log(charactersApi);
       setCharacters(charactersApi);
     });
   }, []);
+  console.log(characters);
 
-  return <></>;
+  return (
+    <>
+      <h1>Harry Potter Searcher</h1>
+      <Filters characters={characters} handleInput={handleInput} />
+      <CharacterList characters={characters} />
+    </>
+  );
 }
 
 export default App;

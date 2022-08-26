@@ -1,18 +1,18 @@
 import { v4 as uuid } from 'uuid';
 
-const getCharacters = () => {
-  return fetch('http://hp-api.herokuapp.com/api/characters')
-    .then((response) => response.json())
-    .then((data) => {
-      const characters = data.map((character) => {
-        return {
-          name: character.name,
-          //Add more characteristics to give to details or make a new fetch
-        };
-      });
-      return characters;
-    });
-};
+// const getCharacters = () => {
+//   return fetch('http://hp-api.herokuapp.com/api/characters')
+//     .then((response) => response.json())
+//     .then((data) => {
+//       const characters = data.map((character) => {
+//         return {
+//           name: character.name,
+//           //Add more characteristics to give to details or make a new fetch
+//         };
+//       });
+//       return characters;
+//     });
+// };
 
 const getCharactersByHouseName = () => {
   return fetch('http://hp-api.herokuapp.com/api/characters/house/gryffindor')
@@ -27,14 +27,11 @@ const getCharactersByHouseName = () => {
           name: character.name,
           id: uuid(),
           species: character.species,
+          house: character.house,
         };
       });
       return dataClean;
     });
 };
 
-const fetchFunctions = {
-  getCharacters: getCharacters,
-  getCharactersByHouseName: getCharactersByHouseName,
-};
-export default fetchFunctions;
+export default getCharactersByHouseName;
