@@ -15,11 +15,18 @@ function App() {
   const [searchedName, setSearchedName] = useState('');
   const [selectedHouse, setselectedHouse] = useState('Gryffindor');
 
+  const houses = characterData
+    .filter((character) => character.house !== '')
+    .map((character) => character.house);
+  const housesSet = new Set(houses);
+  const allHouses = [...housesSet];
+
   useEffect(() => {
     ls.set('characterData', characterData);
   }, [characterData]);
 
   useEffect(() => {
+    //si estan en el ls los cojo de ahi, sino de la api
     getCharacters().then((charactersApi) => {
       setCharacterData(charactersApi);
     });
@@ -28,6 +35,14 @@ function App() {
   const handleInputText = (value) => {
     setSearchedName(value);
   };
+  const handleInputSelect = (value) => {
+    setselectedHouse(value);
+  };
+  const cleanCharacters = characterData
+    .filter((character) =>
+      character.name.toLowerCase().includes(searchedName.toLowerCase())
+    )
+    .filter((character) => character.house === selectedHouse);
 
   return (
     <>
@@ -36,13 +51,15 @@ function App() {
       </header>
       <main>
         <Filters
-          characterData={characterData}
+          characterData={cleanCharacters}
           searchedName={searchedName}
           handleInputText={handleInputText}
+          handleInputSelect={handleInputSelect}
+          allHouses={allHouses}
         />
         <section>
           <CharacterList
-            characterData={characterData}
+            characterData={cleanCharacters}
             searchedName={searchedName}
           />
         </section>

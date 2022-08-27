@@ -3,9 +3,7 @@
 
 function CharacterList(props) {
   const characterList = props.characterData
-    .filter((character) =>
-      character.name.toLowerCase().includes(props.searchedName.toLowerCase())
-    )
+
     // .filter((house)=>)
     .map((character) => (
       <li key={character.id}>

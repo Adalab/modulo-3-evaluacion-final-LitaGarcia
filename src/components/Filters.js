@@ -9,7 +9,11 @@ function Filters(props) {
         handleInputText={props.handleInputText}
         searchName={props.searchedName}
       />
-      <FilterByHouse characterData={props.characterData} />
+      <FilterByHouse
+        characterData={props.characterData}
+        handleInputSelect={props.handleInputSelect}
+        allHouses={props.allHouses}
+      />
     </form>
   );
 }

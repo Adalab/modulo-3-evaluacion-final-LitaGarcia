@@ -1,12 +1,13 @@
 function FilterByHouse(props) {
-  const houses = props.characterData
-    .filter((character) => character.house !== '')
-    .map((character) => character.house);
-  const housesSet = new Set(houses);
-  const allHouses = [...housesSet];
-  const housesList = allHouses.map((house, i) => (
-    <option key={i}>{house}</option>
+  const housesList = props.allHouses.map((house, i) => (
+    <option key={i} value={house}>
+      {house}
+    </option>
   ));
+  console.log(housesList);
+  const handleInputSelect = (ev) => {
+    props.handleInputSelect(ev.target.value);
+  };
   return (
     <>
       <label htmlFor="House">Filtrar por casa</label>
@@ -14,7 +15,7 @@ function FilterByHouse(props) {
         name="house"
         id="house"
         value={props.selectedHouse}
-        onChange={props.handleInputSelect}
+        onChange={handleInputSelect}
       >
         {housesList}
       </select>
