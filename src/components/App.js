@@ -12,6 +12,8 @@ function App() {
   const [characterData, setCharacterData] = useState([]);
   const [searchedName, setSearchedName] = useState('');
   const [selectedHouse, setselectedHouse] = useState('Gryffindor');
+
+  console.log('se renderiza APP pero no el useEffect');
   useEffect(() => {
     //si estan en el ls los cojo de ahi, sino de la api
     getCharacters().then((charactersApi) => {
