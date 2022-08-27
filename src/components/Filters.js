@@ -7,6 +7,8 @@ function Filters(props) {
       <FilterByName
         character={props.characters}
         handleInput={props.handleInput}
+        handleSearch={props.handleSearch}
+        searchName={props.searchName}
       />
     </form>
   );

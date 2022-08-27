@@ -3,9 +3,9 @@
 
 function CharacterList(props) {
   const characterList = props.characters
-    // .filter((character) =>
-    //   character.house.toLowerCase().includes(character.house.toLowerCase())
-    // )
+    .filter((character) =>
+      character.name.toLowerCase().includes(props.searchName.toLowerCase())
+    )
     .map((character) => (
       <li key={character.id}>
         <img

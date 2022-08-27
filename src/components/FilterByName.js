@@ -1,16 +1,18 @@
 // import { checkPropTypes } from 'prop-types';
 
 function FilterByName(props) {
-  const handleInput = (ev) => {
-    handleInput(ev.target);
+  const handleSearch = (ev) => {
+    props.handleSearch(ev.target.value);
   };
   return (
     <>
-      <label> Filtrar por nombre </label>
+      <label htmlFor="searchName"> Filtrar por nombre </label>
       <input
         type="text"
-        value={props.character.name}
-        onChange={handleInput}
+        name="name"
+        id="name"
+        value={props.searchName}
+        onChange={handleSearch}
       ></input>
     </>
   );

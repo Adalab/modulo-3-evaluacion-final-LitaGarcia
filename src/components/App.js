@@ -10,11 +10,7 @@ import Filters from './Filters';
 
 function App() {
   const [characters, setCharacters] = useState([]);
-  const [filterName, setFilterName] = useState('gryffindor');
-
-  const handleInput = (value) => {
-    setFilterName(value);
-  };
+  const [searchName, setSearchName] = useState('');
 
   useEffect(() => {
     getCharactersByHouseName().then((charactersApi) => {
@@ -24,11 +20,21 @@ function App() {
   }, []);
   console.log(characters);
 
+  const handleSearch = (value) => {
+    setSearchName(value);
+  };
+
   return (
     <>
       <h1>Harry Potter Searcher</h1>
-      <Filters characters={characters} handleInput={handleInput} />
-      <CharacterList characters={characters} />
+      <Filters
+        characters={characters}
+        searchName={searchName}
+        handleSearch={handleSearch}
+      />
+      <section>
+        <CharacterList characters={characters} searchName={searchName} />
+      </section>
     </>
   );
 }
