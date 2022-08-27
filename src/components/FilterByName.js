@@ -1,7 +1,9 @@
 // import { checkPropTypes } from 'prop-types';
+import ls from '../services/localStorage';
 
 function FilterByName(props) {
   const handleInputText = (ev) => {
+    ls.set('searchedName', ev.target.value);
     props.handleInputText(ev.target.value);
   };
   return (
@@ -11,7 +13,7 @@ function FilterByName(props) {
         type="text"
         name="name"
         id="name"
-        value={props.searchedName}
+        value={ls.get('searchedName', '')}
         onChange={handleInputText}
       ></input>
     </>

@@ -2,8 +2,8 @@
 // import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 
-function CharacterList(props) {
-  const characterList = props.characters
+function CharacterList({ characters }) {
+  const characterList = characters
     .sort((a, b) => {
       if (a.name < b.name) {
         return -1;

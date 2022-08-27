@@ -9,32 +9,31 @@ import Filters from './Filters';
 import CharacterDetail from './CharacterDetail';
 
 function App() {
-  const [characterData, setCharacterData] = useState([]);
-  const [searchedName, setSearchedName] = useState('');
-  const [selectedHouse, setselectedHouse] = useState('Gryffindor');
+  const [characterData, setCharacterData] = useState(
+    ls.get('characterData', [])
+  );
+  const [searchedName, setSearchedName] = useState(ls.get('searchedName', ''));
+  const [selectedHouse, setSelectedHouse] = useState('Gryffindor');
 
   console.log('se renderiza APP pero no el useEffect');
-  useEffect(() => {
-    //si estan en el ls los cojo de ahi, sino de la api
-    getCharacters().then((charactersApi) => {
-      setCharacterData(charactersApi);
-    });
-  }, []);
 
   const houses = characterData
     .filter((character) => character.house !== '')
     .map((character) => character.house);
   const housesSet = new Set(houses);
   const allHouses = [...housesSet];
-  // useEffect(() => {
-  //   ls.set('characterData', characterData);
-  // }, [characterData]);
 
+  useEffect(() => {
+    //si estan en el ls los cojo de ahi, sino de la api
+    getCharacters().then((charactersApi) => {
+      setCharacterData(charactersApi);
+    });
+  }, []);
   const handleInputText = (value) => {
     setSearchedName(value);
   };
   const handleInputSelect = (value) => {
-    setselectedHouse(value);
+    setSelectedHouse(value);
   };
   const cleanCharacters = characterData
     .filter((character) =>
