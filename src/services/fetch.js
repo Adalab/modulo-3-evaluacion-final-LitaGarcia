@@ -4,6 +4,7 @@ const getCharacters = () => {
   return fetch('http://hp-api.herokuapp.com/api/characters/')
     .then((response) => response.json())
     .then((data) => {
+      console.log('hhhh');
       const dataClean = data.map((character) => {
         return {
           img:

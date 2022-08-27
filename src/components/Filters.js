@@ -3,8 +3,11 @@ import FilterByHouse from './FilterByHouse';
 // import { PropTypes } from 'prop-types';
 
 function Filters(props) {
+  const handleSubmit = (ev) => {
+    ev.preventDefault();
+  };
   return (
-    <form>
+    <form onSubmit={handleSubmit}>
       <FilterByName
         handleInputText={props.handleInputText}
         searchName={props.searchedName}
@@ -12,6 +15,7 @@ function Filters(props) {
       <FilterByHouse
         characterData={props.characterData}
         handleInputSelect={props.handleInputSelect}
+        selectedHouse={props.selectedHouse}
         allHouses={props.allHouses}
       />
     </form>
