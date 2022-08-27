@@ -1,15 +1,15 @@
 import FilterByName from './FilterByName';
+import FilterByHouse from './FilterByHouse';
 // import { PropTypes } from 'prop-types';
 
 function Filters(props) {
   return (
     <form>
       <FilterByName
-        character={props.characters}
-        handleInput={props.handleInput}
-        handleSearch={props.handleSearch}
-        searchName={props.searchName}
+        handleInputText={props.handleInputText}
+        searchName={props.searchedName}
       />
+      <FilterByHouse characterData={props.characterData} />
     </form>
   );
 }

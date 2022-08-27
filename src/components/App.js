@@ -2,39 +2,51 @@
 // import { Route, Routes, Link } from 'react-router-dom';
 // import { matchPath, useLocation } from 'react-router';
 import { useState, useEffect } from 'react';
-// import localStorage from '../services/localStorage';
+import ls from '../services/localStorage';
 // import '../styles/App.scss';
-import getCharactersByHouseName from '../services/fetch';
+import getCharacters from '../services/fetch';
 import CharacterList from './CharacterList';
 import Filters from './Filters';
 
 function App() {
-  const [characters, setCharacters] = useState([]);
-  const [searchName, setSearchName] = useState('');
+  const [characterData, setCharacterData] = useState(
+    ls.get('characterData', [])
+  );
+  const [searchedName, setSearchedName] = useState('');
+  const [selectedHouse, setselectedHouse] = useState('Gryffindor');
 
   useEffect(() => {
-    getCharactersByHouseName().then((charactersApi) => {
-      console.log(charactersApi);
-      setCharacters(charactersApi);
+    ls.set('characterData', characterData);
+  }, [characterData]);
+
+  useEffect(() => {
+    getCharacters().then((charactersApi) => {
+      setCharacterData(charactersApi);
     });
   }, []);
-  console.log(characters);
 
-  const handleSearch = (value) => {
-    setSearchName(value);
+  const handleInputText = (value) => {
+    setSearchedName(value);
   };
 
   return (
     <>
-      <h1>Harry Potter Searcher</h1>
-      <Filters
-        characters={characters}
-        searchName={searchName}
-        handleSearch={handleSearch}
-      />
-      <section>
-        <CharacterList characters={characters} searchName={searchName} />
-      </section>
+      <header>
+        <h1>Harry Potter Searcher</h1>
+      </header>
+      <main>
+        <Filters
+          characterData={characterData}
+          searchedName={searchedName}
+          handleInputText={handleInputText}
+        />
+        <section>
+          <CharacterList
+            characterData={characterData}
+            searchedName={searchedName}
+          />
+        </section>
+      </main>
     </>
   );
 }

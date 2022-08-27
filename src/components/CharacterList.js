@@ -2,10 +2,11 @@
 // import PropTypes from 'prop-types';
 
 function CharacterList(props) {
-  const characterList = props.characters
+  const characterList = props.characterData
     .filter((character) =>
-      character.name.toLowerCase().includes(props.searchName.toLowerCase())
+      character.name.toLowerCase().includes(props.searchedName.toLowerCase())
     )
+    // .filter((house)=>)
     .map((character) => (
       <li key={character.id}>
         <img
@@ -26,9 +27,9 @@ function CharacterList(props) {
 }
 
 // CharacterList.defaultProps (props) = {
-//   name: props.characters.name,
-//   img: props.characters.img,
-//   species: props.characters.img,
+//   name: props.characterData.name,
+//   img: props.characterData.img,
+//   species: props.characterData.img,
 // };
 
 export default CharacterList;
