@@ -8,6 +8,7 @@ import CharacterList from './CharacterList';
 import Filters from './Filters';
 import CharacterDetail from './CharacterDetail';
 import ResetButton from './ResetButton';
+import NotFoundCharacter from './NotFoundCharacter';
 
 function App() {
   const [characterData, setCharacterData] = useState(
@@ -25,10 +26,12 @@ function App() {
   const allHouses = [...housesSet];
 
   useEffect(() => {
-    //si estan en el ls los cojo de ahi, sino de la api
-    getCharacters().then((charactersApi) => {
-      setCharacterData(charactersApi);
-    });
+    if (characterData.length === 0) {
+      getCharacters().then((charactersApi) => {
+        setCharacterData(charactersApi);
+        ls.set('characterData', charactersApi);
+      });
+    }
   }, []);
   const handleInputText = (value) => {
     console.log(value);
@@ -38,9 +41,9 @@ function App() {
     setSelectedHouse(value);
   };
   const cleanedCharacters = characterData
-    .filter((character) =>
-      character.name.toLowerCase().includes(searchedName.toLowerCase())
-    )
+    .filter((character) => {
+      return character.name.toLowerCase().includes(searchedName.toLowerCase());
+    })
     .filter((character) => character.house === selectedHouse);
 
   const { pathname } = useLocation();
@@ -49,6 +52,12 @@ function App() {
   const characterFound = characterData.find((character) => {
     return character.id === characterId;
   });
+
+  // const renderComponents = () => {
+  //   if (characterData.length === 0) {
+  //   return <NotFoundCharacter/> } else {
+  //   return <CharacterList />
+  // }};
 
   return (
     <>
