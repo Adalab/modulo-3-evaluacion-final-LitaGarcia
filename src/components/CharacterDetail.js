@@ -14,4 +14,5 @@ function CharacterDetail({ character }) {
     </section>
   );
 }
+
 export default CharacterDetail;
