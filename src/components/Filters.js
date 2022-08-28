@@ -10,7 +10,8 @@ function Filters(props) {
     <form onSubmit={handleSubmit}>
       <FilterByName
         handleInputText={props.handleInputText}
-        searchName={props.searchedName}
+        searchedName={props.searchedName}
+        character={props.characters}
       />
       <FilterByHouse
         characterData={props.characterData}

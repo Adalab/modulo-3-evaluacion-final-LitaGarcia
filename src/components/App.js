@@ -13,7 +13,7 @@ function App() {
   const [characterData, setCharacterData] = useState(
     ls.get('characterData', [])
   );
-  const [searchedName, setSearchedName] = useState(ls.get('searchedName', ''));
+  const [searchedName, setSearchedName] = useState('');
   const [selectedHouse, setSelectedHouse] = useState('Gryffindor');
 
   console.log('se renderiza APP pero no el useEffect');
@@ -31,6 +31,7 @@ function App() {
     });
   }, []);
   const handleInputText = (value) => {
+    console.log(value);
     setSearchedName(value);
   };
   const handleInputSelect = (value) => {
@@ -66,6 +67,7 @@ function App() {
                 handleInputText={handleInputText}
                 handleInputSelect={handleInputSelect}
                 allHouses={allHouses}
+                selectedHouse={selectedHouse}
               />
               <ResetButton
                 handleInputText={handleInputText}
