@@ -1,6 +1,7 @@
 // import './CharacterCard';
-// import PropTypes from 'prop-types';
+import defaultProps from 'prop-types';
 import { Link } from 'react-router-dom';
+import '../styles/components/CharacterList.scss';
 
 function CharacterList({ characters }) {
   const characterList = characters
@@ -20,6 +21,7 @@ function CharacterList({ characters }) {
             src={character.img}
             alt={character.name}
             title={character.name}
+            className="main__list--image"
           ></img>
           <h2>{character.name}</h2>
           <h3>{character.species}</h3>
@@ -34,10 +36,10 @@ function CharacterList({ characters }) {
   );
 }
 
-// CharacterList.defaultProps (props) = {
-//   name: props.characters.name,
-//   img: props.characters.img,
-//   species: props.characters.img,
+// CharacterList.defaultProps= {
+//   title: props.characters.name,
+//   // img: props.characters.img,
+//   // species: props.characters.img,
 // };
 
 export default CharacterList;

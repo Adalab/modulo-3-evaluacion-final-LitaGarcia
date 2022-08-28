@@ -1,4 +1,3 @@
-// import { checkPropTypes } from 'prop-types';
 import ls from '../services/localStorage';
 
 function FilterByName(props) {

@@ -7,6 +7,7 @@ import getCharacters from '../services/fetch';
 import CharacterList from './CharacterList';
 import Filters from './Filters';
 import CharacterDetail from './CharacterDetail';
+import ResetButton from './ResetButton';
 
 function App() {
   const [characterData, setCharacterData] = useState(
@@ -35,7 +36,7 @@ function App() {
   const handleInputSelect = (value) => {
     setSelectedHouse(value);
   };
-  const cleanCharacters = characterData
+  const cleanedCharacters = characterData
     .filter((character) =>
       character.name.toLowerCase().includes(searchedName.toLowerCase())
     )
@@ -60,15 +61,19 @@ function App() {
           element={
             <main>
               <Filters
-                characters={cleanCharacters}
+                characters={cleanedCharacters}
                 searchedName={searchedName}
                 handleInputText={handleInputText}
                 handleInputSelect={handleInputSelect}
                 allHouses={allHouses}
               />
+              <ResetButton
+                handleInputText={handleInputText}
+                handleInputSelect={handleInputSelect}
+              ></ResetButton>
               <section>
                 <CharacterList
-                  characters={cleanCharacters}
+                  characters={cleanedCharacters}
                   searchedName={searchedName}
                 />
               </section>
@@ -79,8 +84,6 @@ function App() {
           path="/character/:characterId"
           element={<CharacterDetail character={characterFound} />}
         />
-
-        {/* <Route path="/character" element={<CharacterDetail />} /> */}
       </Routes>
     </>
   );

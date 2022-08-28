@@ -1,6 +1,6 @@
 import FilterByName from './FilterByName';
 import FilterByHouse from './FilterByHouse';
-// import { PropTypes } from 'prop-types';
+import { PropTypes } from 'prop-types';
 
 function Filters(props) {
   const handleSubmit = (ev) => {
@@ -21,11 +21,13 @@ function Filters(props) {
     </form>
   );
 }
-export default Filters;
 
-// component.defaultProps = {
-//
-// }
+Filters.propTypes = {
+  handleInputText: PropTypes.func.isRequired,
+  handleInputSelect: PropTypes.func.isRequired,
+};
+
+export default Filters;
 
 // component.propTypes = {
 //
