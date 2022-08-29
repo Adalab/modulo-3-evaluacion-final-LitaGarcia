@@ -1,5 +1,6 @@
 import FilterByName from './FilterByName';
 import FilterByHouse from './FilterByHouse';
+import FilterByGender from './FilterByGender';
 import { PropTypes } from 'prop-types';
 
 function Filters(props) {
@@ -19,6 +20,10 @@ function Filters(props) {
         selectedHouse={props.selectedHouse}
         allHouses={props.allHouses}
       />
+      <FilterByGender
+        handleInputRadio={props.handleInputRadio}
+        selectedGender={props.selectedGender}
+      />
     </form>
   );
 }
@@ -26,6 +31,7 @@ function Filters(props) {
 Filters.propTypes = {
   handleInputText: PropTypes.func.isRequired,
   handleInputSelect: PropTypes.func.isRequired,
+  handleInputRadio: PropTypes.func.isRequired,
 };
 
 export default Filters;

@@ -16,8 +16,7 @@ function App() {
   );
   const [searchedName, setSearchedName] = useState('');
   const [selectedHouse, setSelectedHouse] = useState('Gryffindor');
-
-  console.log('se renderiza APP pero no el useEffect');
+  const [selectedGender, setSelectedGender] = useState('all');
 
   const houses = characterData
     .filter((character) => character.house !== '')
@@ -33,6 +32,7 @@ function App() {
       });
     }
   }, []);
+
   const handleInputText = (value) => {
     console.log(value);
     setSearchedName(value);
@@ -40,11 +40,22 @@ function App() {
   const handleInputSelect = (value) => {
     setSelectedHouse(value);
   };
+  const handleInputRadio = (value) => {
+    setSelectedGender(value);
+  };
+
   const cleanedCharacters = characterData
     .filter((character) => {
       return character.name.toLowerCase().includes(searchedName.toLowerCase());
     })
-    .filter((character) => character.house === selectedHouse);
+    .filter((character) => character.house === selectedHouse)
+    .filter((character) => {
+      if (selectedGender === 'all') {
+        return characterData;
+      } else {
+        return character.gender === selectedGender;
+      }
+    });
 
   const { pathname } = useLocation();
   const dataPath = matchPath('/character/:characterId', pathname);
@@ -53,11 +64,18 @@ function App() {
     return character.id === characterId;
   });
 
-  // const renderComponents = () => {
-  //   if (characterData.length === 0) {
-  //   return <NotFoundCharacter/> } else {
-  //   return <CharacterList />
-  // }};
+  const renderComponents = () => {
+    if (cleanedCharacters.length === 0) {
+      return <NotFoundCharacter />;
+    } else {
+      return (
+        <CharacterList
+          characters={cleanedCharacters}
+          searchedName={searchedName}
+        />
+      );
+    }
+  };
 
   return (
     <>
@@ -77,17 +95,15 @@ function App() {
                 handleInputSelect={handleInputSelect}
                 allHouses={allHouses}
                 selectedHouse={selectedHouse}
+                handleInputRadio={handleInputRadio}
+                selectedGender={selectedGender}
               />
               <ResetButton
                 handleInputText={handleInputText}
                 handleInputSelect={handleInputSelect}
+                handleInputRadio={handleInputRadio}
               ></ResetButton>
-              <section>
-                <CharacterList
-                  characters={cleanedCharacters}
-                  searchedName={searchedName}
-                />
-              </section>
+              <section>{renderComponents()}</section>
             </main>
           }
         />

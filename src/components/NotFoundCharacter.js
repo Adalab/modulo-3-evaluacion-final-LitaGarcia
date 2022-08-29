@@ -1,4 +1,4 @@
 function NotFoundCharacter() {
-  return <h2>hola</h2>;
+  return <p>Lo sentimos, el personaje que buscas no existe.</p>;
 }
 export default NotFoundCharacter;

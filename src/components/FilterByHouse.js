@@ -4,7 +4,6 @@ function FilterByHouse(props) {
       {house}
     </option>
   ));
-  console.log(housesList);
   const handleInputSelect = (ev) => {
     props.handleInputSelect(ev.target.value);
   };
