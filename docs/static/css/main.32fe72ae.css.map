@@ -1,1 +1,0 @@
-{"version":3,"file":"static/css/main.32fe72ae.css","mappings":"AACE,yCACE,YAAa,CACb,WAAY","sources":["styles/components/CharacterDetail.scss"],"sourcesContent":[".main__details {\n  &--image {\n    height: 300px;\n    width: 250px;\n  }\n}\n"],"names":[],"sourceRoot":""}

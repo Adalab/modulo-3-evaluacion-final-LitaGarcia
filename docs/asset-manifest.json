@@ -1,14 +1,15 @@
 {
   "files": {
-    "main.css": "./static/css/main.32fe72ae.css",
-    "main.js": "./static/js/main.d6adc532.js",
+    "main.css": "./static/css/main.a8660041.css",
+    "main.js": "./static/js/main.f2f500ce.js",
+    "static/media/logoHP.png": "./static/media/logoHP.462c8d4b2b51b0b33948.png",
     "static/media/HP.png": "./static/media/HP.344e0d6f1b3a1b100bf5.png",
     "index.html": "./index.html",
-    "main.32fe72ae.css.map": "./static/css/main.32fe72ae.css.map",
-    "main.d6adc532.js.map": "./static/js/main.d6adc532.js.map"
+    "main.a8660041.css.map": "./static/css/main.a8660041.css.map",
+    "main.f2f500ce.js.map": "./static/js/main.f2f500ce.js.map"
   },
   "entrypoints": [
-    "static/css/main.32fe72ae.css",
-    "static/js/main.d6adc532.js"
+    "static/css/main.a8660041.css",
+    "static/js/main.f2f500ce.js"
   ]
 }
