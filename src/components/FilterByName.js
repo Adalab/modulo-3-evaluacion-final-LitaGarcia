@@ -6,8 +6,7 @@ function FilterByName(props) {
   return (
     <>
       <label className="form__label" htmlFor="searchName">
-        {' '}
-        Filtrar por nombre:{' '}
+        Nombre:
       </label>
       <input
         className="form__input"

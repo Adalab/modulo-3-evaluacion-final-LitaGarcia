@@ -9,9 +9,7 @@ function ResetButton(props) {
   };
   return (
     <button className="buttonreset" onClick={handleClickReset}>
-      <span>
-        <i>Borrar filtros de búsqueda</i>
-      </span>
+      <i>Borrar filtros</i>
       <i className="buttonreset--icon fa-solid fa-wand-sparkles fa-lg"></i>
     </button>
   );

@@ -1,0 +1,11 @@
+@import '../core/reset.scss';
+.main {
+  &__list {
+    display: flex;
+    flex-direction: wrap;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: center;
+    gap: 50px;
+  }
+}

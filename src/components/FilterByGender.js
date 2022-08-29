@@ -7,7 +7,7 @@ function FilterByGender(props) {
 
   return (
     <>
-      <p>Filtrar por género</p>
+      <p>Género</p>
       <div className="form__wrapper">
         <label htmlFor="gender">Indiferente</label>
         <input

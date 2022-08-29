@@ -10,7 +10,7 @@ function FilterByHouse(props) {
   };
   return (
     <>
-      <label htmlFor="House">Filtrar por casa:</label>
+      <label htmlFor="House">Casa:</label>
       <select
         className="form__select"
         name="house"

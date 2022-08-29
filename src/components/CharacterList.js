@@ -22,7 +22,7 @@ function CharacterList({ characters }) {
 
   return (
     <section>
-      <ul>{characterList}</ul>
+      <ul className="main__list">{characterList}</ul>
     </section>
   );
 }
