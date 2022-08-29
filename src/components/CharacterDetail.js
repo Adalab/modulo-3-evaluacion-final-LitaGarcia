@@ -1,5 +1,4 @@
 import { Link } from 'react-router-dom';
-import ls from '../services/localStorage';
 import '../styles/components/CharacterDetail.scss';
 import NotFoundCharacter from './NotFoundCharacter';
 import Loader from './Loader';

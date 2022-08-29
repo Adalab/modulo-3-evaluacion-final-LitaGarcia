@@ -36,7 +36,6 @@ function App() {
   }, []);
 
   const handleInputText = (value) => {
-    console.log(value);
     setSearchedName(value);
   };
   const handleInputSelect = (value) => {

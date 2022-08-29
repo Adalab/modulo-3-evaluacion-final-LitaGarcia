@@ -2,13 +2,14 @@ function FilterByGender(props) {
   const handleInputRadio = (ev) => {
     props.handleInputRadio(ev.target.value);
   };
+
   return (
     <>
       <p>Selecciona por género</p>
       <label htmlFor="gender">Indiferente</label>
       <input
-        type="radio"
-        name="gender"
+        type={props.type}
+        name={props.name}
         value="all"
         id="all"
         checked={props.selectedGender === 'all'}
@@ -16,8 +17,8 @@ function FilterByGender(props) {
       />
       <label htmlFor="gender">Femenino</label>
       <input
-        type="radio"
-        name="gender"
+        type={props.type}
+        name={props.name}
         value="female"
         id="female"
         checked={props.selectedGender === 'female'}
@@ -25,8 +26,8 @@ function FilterByGender(props) {
       />
       <label htmlFor="gender">Masculino</label>
       <input
-        type="radio"
-        name="gender"
+        type={props.type}
+        name={props.name}
         value="male"
         id="male"
         checked={props.selectedGender === 'male'}
@@ -35,4 +36,9 @@ function FilterByGender(props) {
     </>
   );
 }
+FilterByGender.defaultProps = {
+  name: 'gender',
+  type: 'radio',
+};
+
 export default FilterByGender;

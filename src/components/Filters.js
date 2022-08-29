@@ -35,7 +35,3 @@ Filters.propTypes = {
 };
 
 export default Filters;
-
-// component.propTypes = {
-//
-// }
