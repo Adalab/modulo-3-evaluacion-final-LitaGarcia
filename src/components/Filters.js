@@ -2,6 +2,7 @@ import FilterByName from './FilterByName';
 import FilterByHouse from './FilterByHouse';
 import FilterByGender from './FilterByGender';
 import { PropTypes } from 'prop-types';
+import ResetButton from './ResetButton';
 
 function Filters(props) {
   const handleSubmit = (ev) => {
@@ -24,6 +25,11 @@ function Filters(props) {
         handleInputRadio={props.handleInputRadio}
         selectedGender={props.selectedGender}
       />
+      <ResetButton
+        handleInputText={props.handleInputText}
+        handleInputSelect={props.handleInputSelect}
+        handleInputRadio={props.handleInputRadio}
+      ></ResetButton>
     </form>
   );
 }

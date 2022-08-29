@@ -1,0 +1,18 @@
+.header {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  align-items: center;
+  &__img {
+    width: 500px;
+    height: 200px;
+  }
+  &__title {
+    font-size: 30px;
+    font-family: 'Courgette';
+  }
+  &__text {
+    font-size: 20px;
+    font-family: 'Courgette';
+  }
+}

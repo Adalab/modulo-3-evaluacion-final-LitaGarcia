@@ -7,9 +7,10 @@ import getCharacters from '../services/fetch';
 import CharacterList from './CharacterList';
 import Filters from './Filters';
 import CharacterDetail from './CharacterDetail';
-import ResetButton from './ResetButton';
+import Header from './Header';
 import NotFoundCharacter from './NotFoundCharacter';
 import Loader from './Loader';
+import '../styles/layout/main.scss';
 
 function App() {
   const [characterData, setCharacterData] = useState(
@@ -81,15 +82,12 @@ function App() {
 
   return (
     <>
-      <header>
-        <h1>Harry Potter Searcher</h1>
-      </header>
-
       <Routes>
         <Route
           path="/"
           element={
-            <main>
+            <main className={selectedHouse}>
+              <Header />
               <Filters
                 characters={cleanedCharacters}
                 searchedName={searchedName}
@@ -100,11 +98,7 @@ function App() {
                 handleInputRadio={handleInputRadio}
                 selectedGender={selectedGender}
               />
-              <ResetButton
-                handleInputText={handleInputText}
-                handleInputSelect={handleInputSelect}
-                handleInputRadio={handleInputRadio}
-              ></ResetButton>
+
               <section>{renderComponents()}</section>
             </main>
           }

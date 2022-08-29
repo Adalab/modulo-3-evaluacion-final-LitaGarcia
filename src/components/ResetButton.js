@@ -5,6 +5,10 @@ function ResetButton(props) {
     props.handleInputSelect('Gryffindor');
     props.handleInputRadio('all');
   };
-  return <button onClick={handleClickReset}>Borrar filtros de búsqueda</button>;
+  return (
+    <button onClick={handleClickReset}>
+      Borrar filtros de búsqueda <i className="fa-solid fa-wand-sparkles"></i>
+    </button>
+  );
 }
 export default ResetButton;

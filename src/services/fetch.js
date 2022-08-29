@@ -1,6 +1,6 @@
 // import { v4 as uuid } from 'uuid';
 import defaultImage from '../images/HP.png';
-import translation from '../components/translations.json';
+import translation from './translations.json';
 
 const getCharacters = () => {
   return fetch('http://hp-api.herokuapp.com/api/characters/')
