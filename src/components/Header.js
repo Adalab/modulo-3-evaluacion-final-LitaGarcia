@@ -11,14 +11,15 @@ function Header() {
       ></img>
       <h1 className="header__title">Buscador de personajes de Harry Potter</h1>
       <h2 className="header__text">
-        Si pulsas sobre un personaje verás <i class="fa-regular fa-star"></i>
-        mágicamente<i class="fa-regular fa-star"></i> todos sus detalles
+        Si pulsas sobre un personaje verás{' '}
+        <i class=" header__icon fa-regular fa-star"></i>
+        mágicamente<i class=" header__icon  fa-regular fa-star"></i> todos sus
+        detalles
       </h2>
       <h3 className="header__text">
         ¡También puedes copiar el enlace de arriba para compartir quién es el
         mejor mago!
       </h3>
-      {/* <FontAwesomeIcon icon="fa-solid fa-stars" /> */}
     </header>
   );
 }

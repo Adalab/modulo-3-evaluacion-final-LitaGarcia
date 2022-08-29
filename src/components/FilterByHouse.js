@@ -1,3 +1,4 @@
+import '../styles/components/Filterbyhouse.scss';
 function FilterByHouse(props) {
   const housesList = props.allHouses.map((house, i) => (
     <option key={i} value={house}>
@@ -9,8 +10,9 @@ function FilterByHouse(props) {
   };
   return (
     <>
-      <label htmlFor="House">Filtrar por casa</label>
+      <label htmlFor="House">Filtrar por casa:</label>
       <select
+        className="form__select"
         name="house"
         id="house"
         value={props.selectedHouse}

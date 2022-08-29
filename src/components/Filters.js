@@ -3,13 +3,14 @@ import FilterByHouse from './FilterByHouse';
 import FilterByGender from './FilterByGender';
 import { PropTypes } from 'prop-types';
 import ResetButton from './ResetButton';
+import '../styles/components/Filters.scss';
 
 function Filters(props) {
   const handleSubmit = (ev) => {
     ev.preventDefault();
   };
   return (
-    <form onSubmit={handleSubmit}>
+    <form className="form" onSubmit={handleSubmit}>
       <FilterByName
         handleInputText={props.handleInputText}
         searchedName={props.searchedName}

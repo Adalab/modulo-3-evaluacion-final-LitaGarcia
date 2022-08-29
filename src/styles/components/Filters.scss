@@ -1,0 +1,13 @@
+@import '../core/reset.scss';
+
+.form {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  align-items: center;
+  gap: 30px;
+  border-top: solid;
+  border-bottom: solid;
+  padding: 30px;
+  margin: 30px;
+}

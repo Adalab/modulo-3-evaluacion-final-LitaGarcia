@@ -1,0 +1,10 @@
+@import '../core/reset.scss';
+
+.form {
+  &__wrapper {
+    display: flex;
+    flex-direction: row;
+    gap: 30px;
+  }
+  align-items: center;
+}

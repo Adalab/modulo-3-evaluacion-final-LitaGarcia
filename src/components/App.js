@@ -86,7 +86,7 @@ function App() {
         <Route
           path="/"
           element={
-            <main className={selectedHouse}>
+            <main className="main">
               <Header />
               <Filters
                 characters={cleanedCharacters}
@@ -109,6 +109,7 @@ function App() {
             <CharacterDetail
               characterData={characterData}
               characterId={characterId}
+              selectedHouse={selectedHouse}
             />
           }
         />

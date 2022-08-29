@@ -1,0 +1,18 @@
+@import '../core/reset.scss';
+.buttonreset {
+  margin: 10px;
+  padding: 20px;
+  background: #d3a625;
+  border-radius: 30px;
+  font-size: 12px;
+  border: 0;
+  :hover {
+    font-size: 20px;
+    transition: 0.5s;
+    color: white;
+  }
+  &--icon {
+    width: 20px;
+    margin-left: 10px;
+  }
+}

@@ -3,7 +3,7 @@ import '../styles/components/CharacterDetail.scss';
 import NotFoundCharacter from './NotFoundCharacter';
 import Loader from './Loader';
 
-function CharacterDetail({ characterData, characterId }) {
+function CharacterDetail({ characterData, characterId, selectedHouse }) {
   if (characterData.length === 0) {
     return <Loader />;
   } else {
@@ -13,7 +13,7 @@ function CharacterDetail({ characterData, characterId }) {
     });
 
     return character ? (
-      <section key={character.id} id={character.id}>
+      <section className={selectedHouse} key={character.id} id={character.id}>
         <Link to="/">Volver</Link>
         <img
           className="main__details--image"

@@ -1,3 +1,5 @@
+import '../styles/components/ResetButton.scss';
+
 function ResetButton(props) {
   const handleClickReset = (ev) => {
     ev.preventDefault();
@@ -6,8 +8,11 @@ function ResetButton(props) {
     props.handleInputRadio('all');
   };
   return (
-    <button onClick={handleClickReset}>
-      Borrar filtros de búsqueda <i className="fa-solid fa-wand-sparkles"></i>
+    <button className="buttonreset" onClick={handleClickReset}>
+      <span>
+        <i>Borrar filtros de búsqueda</i>
+      </span>
+      <i className="buttonreset--icon fa-solid fa-wand-sparkles fa-lg"></i>
     </button>
   );
 }

@@ -1,0 +1,8 @@
+@import '../core/reset.scss';
+.form {
+  &__select {
+    font-family: 'Courgette';
+    width: 150px;
+    border: 0;
+  }
+}
