@@ -4,8 +4,6 @@ import '../styles/components/CharacterDetail.scss';
 import NotFoundCharacter from './NotFoundCharacter';
 
 function CharacterDetail({ character }) {
-  ls.get('characterData', {});
-  console.log(character);
   return character ? (
     <section key={character.id} id={character.id}>
       <Link to="/">Volver</Link>

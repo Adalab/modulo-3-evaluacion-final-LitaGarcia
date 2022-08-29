@@ -9,6 +9,7 @@ import Filters from './Filters';
 import CharacterDetail from './CharacterDetail';
 import ResetButton from './ResetButton';
 import NotFoundCharacter from './NotFoundCharacter';
+import Loader from './Loader';
 
 function App() {
   const [characterData, setCharacterData] = useState(
@@ -17,6 +18,7 @@ function App() {
   const [searchedName, setSearchedName] = useState('');
   const [selectedHouse, setSelectedHouse] = useState('Gryffindor');
   const [selectedGender, setSelectedGender] = useState('all');
+  const [isLoading, setIsLoading] = useState(false);
 
   const houses = characterData
     .filter((character) => character.house !== '')
@@ -25,10 +27,11 @@ function App() {
   const allHouses = [...housesSet];
 
   useEffect(() => {
+    setIsLoading(true);
     if (characterData.length === 0) {
       getCharacters().then((charactersApi) => {
         setCharacterData(charactersApi);
-        ls.set('characterData', charactersApi);
+        setIsLoading(false);
       });
     }
   }, []);
@@ -65,15 +68,19 @@ function App() {
   });
 
   const renderComponents = () => {
-    if (cleanedCharacters.length === 0) {
-      return <NotFoundCharacter />;
+    if (isLoading) {
+      return <Loader />;
     } else {
-      return (
-        <CharacterList
-          characters={cleanedCharacters}
-          searchedName={searchedName}
-        />
-      );
+      if (cleanedCharacters.length === 0) {
+        return <NotFoundCharacter />;
+      } else {
+        return (
+          <CharacterList
+            characters={cleanedCharacters}
+            searchedName={searchedName}
+          />
+        );
+      }
     }
   };
 

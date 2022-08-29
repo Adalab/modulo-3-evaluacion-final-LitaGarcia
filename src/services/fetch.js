@@ -5,7 +5,6 @@ const getCharacters = () => {
   return fetch('http://hp-api.herokuapp.com/api/characters/')
     .then((response) => response.json())
     .then((data) => {
-      console.log('hhhh');
       const dataClean = data.map((character) => {
         return {
           img: character.image === '' ? defaultImage : character.image,
@@ -20,6 +19,12 @@ const getCharacters = () => {
       });
       return dataClean;
     });
+
+  // const func = async () =>  {
+  // const response1 = await fetch(UL);
+  // const data = await response1.json()
+  // retrun data.maip()
+  // }
 };
 
 export default getCharacters;
