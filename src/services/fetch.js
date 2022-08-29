@@ -5,11 +5,11 @@ const getCharacters = () => {
   return fetch('http://hp-api.herokuapp.com/api/characters/')
     .then((response) => response.json())
     .then((data) => {
-      const dataClean = data.map((character) => {
+      const dataClean = data.map((character, i) => {
         return {
           img: character.image === '' ? defaultImage : character.image,
           name: character.name,
-          id: uuid(),
+          id: i.toString(),
           species: character.species,
           house: character.house === '' ? 'Desconocida' : character.house,
           gender: character.gender,

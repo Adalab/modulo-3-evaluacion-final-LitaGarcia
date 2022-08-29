@@ -28,12 +28,11 @@ function App() {
 
   useEffect(() => {
     setIsLoading(true);
-    if (characterData.length === 0) {
-      getCharacters().then((charactersApi) => {
-        setCharacterData(charactersApi);
-        setIsLoading(false);
-      });
-    }
+
+    getCharacters().then((charactersApi) => {
+      setCharacterData(charactersApi);
+      setIsLoading(false);
+    });
   }, []);
 
   const handleInputText = (value) => {
@@ -63,9 +62,6 @@ function App() {
   const { pathname } = useLocation();
   const dataPath = matchPath('/character/:characterId', pathname);
   const characterId = dataPath !== null ? dataPath.params.characterId : null;
-  const characterFound = characterData.find((character) => {
-    return character.id === characterId;
-  });
 
   const renderComponents = () => {
     if (isLoading) {
@@ -116,7 +112,12 @@ function App() {
         />
         <Route
           path="/character/:characterId"
-          element={<CharacterDetail character={characterFound} />}
+          element={
+            <CharacterDetail
+              characterData={characterData}
+              characterId={characterId}
+            />
+          }
         />
       </Routes>
     </>
