@@ -8,8 +8,8 @@ function CharacterCard({ character }) {
         title={character.name}
         className="main__list--image"
       ></img>
-      <h2>{character.name}</h2>
-      <h3>{character.species}</h3>
+      <h2 className="main__list--name">{character.name}</h2>
+      <h3 className="main__list--specie">{character.species}</h3>
     </li>
   );
 }
