@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "./static/css/main.e52ac119.css",
-    "main.js": "./static/js/main.b31bdcf4.js",
+    "main.css": "./static/css/main.bb404202.css",
+    "main.js": "./static/js/main.15e3a1c9.js",
     "static/media/gryffindor.jpeg": "./static/media/gryffindor.445fbc29cf9ca5d650e5.jpeg",
     "static/media/ravenclaw.jpeg": "./static/media/ravenclaw.7d43252878cd9e7a1041.jpeg",
     "static/media/logoHP.png": "./static/media/logoHP.462c8d4b2b51b0b33948.png",
@@ -9,11 +9,11 @@
     "static/media/slytherin.jpeg": "./static/media/slytherin.cc28e387173d161750e4.jpeg",
     "static/media/HP.png": "./static/media/HP.344e0d6f1b3a1b100bf5.png",
     "index.html": "./index.html",
-    "main.e52ac119.css.map": "./static/css/main.e52ac119.css.map",
-    "main.b31bdcf4.js.map": "./static/js/main.b31bdcf4.js.map"
+    "main.bb404202.css.map": "./static/css/main.bb404202.css.map",
+    "main.15e3a1c9.js.map": "./static/js/main.15e3a1c9.js.map"
   },
   "entrypoints": [
-    "static/css/main.e52ac119.css",
-    "static/js/main.b31bdcf4.js"
+    "static/css/main.bb404202.css",
+    "static/js/main.15e3a1c9.js"
   ]
 }
