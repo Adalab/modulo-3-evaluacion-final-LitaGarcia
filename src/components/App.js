@@ -25,6 +25,8 @@ function App() {
     .map((character) => character.house);
   const housesSet = new Set(houses);
   const allHouses = [...housesSet];
+  // const addAllOption = <option value="all">Todas</option>;
+  // allHouses.push(addAllOption);
 
   useEffect(() => {
     setIsLoading(true);
@@ -49,7 +51,9 @@ function App() {
     .filter((character) => {
       return character.name.toLowerCase().includes(searchedName.toLowerCase());
     })
-    .filter((character) => character.house === selectedHouse)
+    .filter((character) =>
+      selectedHouse.includes('all') ? true : character.house === selectedHouse
+    )
     .filter((character) => {
       if (selectedGender === 'all') {
         return characterData;

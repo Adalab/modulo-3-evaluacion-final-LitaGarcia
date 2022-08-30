@@ -19,6 +19,7 @@ function FilterByHouse(props) {
         onChange={handleInputSelect}
       >
         {housesList}
+        <option value="all">Todas</option>
       </select>
     </>
   );

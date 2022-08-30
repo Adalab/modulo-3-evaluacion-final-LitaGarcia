@@ -9,9 +9,25 @@ function CharacterDetail({ characterData, characterId, selectedHouse }) {
     return <Loader />;
   } else {
     const character = characterData.find((character) => {
-      // debugger;
       return character.id === characterId;
     });
+    const characterStatus = () => {
+      if (character.alive.includes('Con vida')) {
+        return (
+          <>
+            {character.alive}
+            <i className="fa-solid fa-heart-pulse"></i>
+          </>
+        );
+      } else {
+        return (
+          <>
+            {character.alive}
+            <i className="fa-solid fa-skull-crossbones"></i>
+          </>
+        );
+      }
+    };
 
     return character ? (
       <>
@@ -27,7 +43,7 @@ function CharacterDetail({ characterData, characterId, selectedHouse }) {
           />
           <div className={`${selectedHouse} main__details--container`}>
             <h3 className="main__details--name">{character.name}</h3>
-            <p>Estado: {character.alive}</p>
+            <p>Estado: {characterStatus()}</p>
             <p>Actor: {character.actor}</p>
             <p> Raza: {character.species}</p>
             <p> Género: {character.gender}</p>

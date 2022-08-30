@@ -12,9 +12,10 @@
     color: white;
     border: 10px solid rgb(160, 140, 27);
     border-style: double;
+    background-color: bisque;
     font-family: 'Nanum Myeongjo', serif;
     font-size: 18px;
-    gap: 10px;
+    width: 600px;
   }
   &--name {
     font-size: 25px;
@@ -28,5 +29,6 @@
     padding-right: 50px;
     gap: 20px;
     text-align: center;
+    line-height: 1.5;
   }
 }
