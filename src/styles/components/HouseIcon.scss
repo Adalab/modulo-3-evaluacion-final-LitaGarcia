@@ -1,14 +1,14 @@
-.arrow__icon {
+.house__icon {
   width: 100px;
   height: 50px;
   color: #740001;
   position: fixed;
-  left: 50%;
-  top: 50%;
+  left: 90%;
+  top: 95%;
   cursor: pointer;
 }
 
-.arrow__icon:hover {
+.house__icon:hover {
   transform: scale(1.5);
   transition: 0.3s;
   color: #d3a625;

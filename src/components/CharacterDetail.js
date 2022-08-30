@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom';
 import '../styles/components/CharacterDetail.scss';
 import NotFoundCharacter from './NotFoundCharacter';
 import Loader from './Loader';
+import ArrowIcon from './ArrowIcon';
 
 function CharacterDetail({ characterData, characterId, selectedHouse }) {
   if (characterData.length === 0) {
@@ -13,25 +14,27 @@ function CharacterDetail({ characterData, characterId, selectedHouse }) {
     });
 
     return character ? (
-      <section
-        className={`${selectedHouse} main__deails--wrapper`}
-        key={character.id}
-        id={character.id}
-      >
-        <Link to="/">Volver</Link>
-        <img
-          className="main__details--image"
-          src={character.img}
-          alt={character.name}
-          title={character.name}
-        />
-        <h3>{character.name}</h3>
-        <p>{character.alive}</p>
-        <p>{character.actor}</p>
-        <p> {character.species}</p>
-        <p>{character.gender}</p>
-        <p>{character.house}</p>
-      </section>
+      <>
+        <Link to="/">
+          <ArrowIcon />
+        </Link>
+        <section className="main__details--wrapper">
+          <img
+            className="main__details--image"
+            src={character.img}
+            alt={character.name}
+            title={character.name}
+          />
+          <div className={`${selectedHouse} main__details--container`}>
+            <h3 className="main__details--name">{character.name}</h3>
+            <p>Estado: {character.alive}</p>
+            <p>Actor: {character.actor}</p>
+            <p> Raza: {character.species}</p>
+            <p> Género: {character.gender}</p>
+            <p> Casa: {character.house}</p>
+          </div>
+        </section>
+      </>
     ) : (
       <NotFoundCharacter />
     );

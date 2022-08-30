@@ -9,7 +9,7 @@ import Header from './Header';
 import NotFoundCharacter from './NotFoundCharacter';
 import Loader from './Loader';
 import '../styles/layout/main.scss';
-import ArrowIcon from './ArrowIcon';
+import HouseIcon from './HouseIcon';
 
 function App() {
   const [characterData, setCharacterData] = useState(
@@ -75,7 +75,7 @@ function App() {
               characters={cleanedCharacters}
               searchedName={searchedName}
             />
-            <ArrowIcon />
+            <HouseIcon />
           </>
         );
       }
