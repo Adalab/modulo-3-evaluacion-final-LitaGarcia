@@ -1,23 +1,23 @@
-# Harry Potter Characters Searcher
+# 🪄Harry Potter Characters Searcher🪄
 
-## Available Scripts
-In the project directory, you can run:
+## Installation
 
-## `npm start`
+1. Run `npm install` 
 
-Runs the app in the development mode.
+## Running locally
+
+1. `npm start` runs the app in the development mode.
 Open http://localhost:3000 to view it in the browser.
 
-The page will reload if you make edits.
+2. The page will reload if you make edits.
 You will also see any lint errors in the console.
 
-## npm run build
-Builds the app for production to the build folder.
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Improvements
 
-The build is minified and the filenames include the hashes.
-Your app is ready to be deployed!
+Some possible improvements:
+- Move some functionalities from App component to a specific one
+- Add more inputs and filters, for example checkbox
+- Create and use tests
+- Create a better structure of the project using more folders
 
-See the section about deployment for more information.
-
-## 
+## Be free to test my code ! Actio!
