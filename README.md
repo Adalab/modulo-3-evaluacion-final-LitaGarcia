@@ -19,5 +19,6 @@ Some possible improvements:
 - Add more inputs and filters, for example checkbox
 - Create and use tests
 - Create a better structure of the project using more folders
+- Make a better design with a cleaner SCSS code
 
 ## Be free to test my code ! Actio!
