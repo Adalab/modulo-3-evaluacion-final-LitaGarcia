@@ -1,0 +1,15 @@
+.arrow__icon {
+  width: 100px;
+  height: 50px;
+  color: #d3a625;
+  position: fixed;
+  left: 90%;
+  top: 95%;
+  cursor: pointer;
+}
+
+.arrow__icon:hover {
+  transform: scale(1.5);
+  transition: 0.3s;
+  color: #740001;
+}

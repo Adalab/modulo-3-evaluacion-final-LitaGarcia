@@ -8,10 +8,12 @@ function ResetButton(props) {
     props.handleInputRadio('all');
   };
   return (
-    <button className="buttonreset" onClick={handleClickReset}>
-      <i>Borrar filtros</i>
-      <i className="buttonreset--icon fa-solid fa-wand-sparkles fa-lg"></i>
-    </button>
+    <div>
+      <p>Pulsa aquí para borrar los filtros:</p>
+      <button className="buttonreset" onClick={handleClickReset}>
+        <i className="buttonreset--icon fa-solid fa-wand-sparkles fa-xl"></i>
+      </button>
+    </div>
   );
 }
 export default ResetButton;

@@ -1,7 +1,6 @@
 @import '../core/reset.scss';
 .buttonreset {
-  height: 50px;
-  margin: 10px;
+  margin: 20px;
   padding: 20px;
   background: #d3a625;
   border-radius: 30px;
@@ -9,13 +8,16 @@
   border: 0;
   cursor: pointer;
   :hover {
-    font-size: 15px;
+    font-size: 20px;
     transition: 0.5s;
     color: white;
-    margin: 10px;
+    margin: 5px;
   }
-  &--icon {
-    width: 20px;
-    margin-left: 10px;
-  }
+}
+
+.buttonreset--icon:hover {
+  transform: scale(2);
+  transition: 0.3s;
+  color: white;
+  padding: 10px;
 }

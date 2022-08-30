@@ -1,8 +1,6 @@
-// import { PropTypes } from 'prop-types';
 import { matchPath, Route, Routes, useLocation } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import ls from '../services/localStorage';
-// import '../styles/App.scss';
 import getCharacters from '../services/fetch';
 import CharacterList from './CharacterList';
 import Filters from './Filters';
@@ -11,6 +9,7 @@ import Header from './Header';
 import NotFoundCharacter from './NotFoundCharacter';
 import Loader from './Loader';
 import '../styles/layout/main.scss';
+import ArrowIcon from './ArrowIcon';
 
 function App() {
   const [characterData, setCharacterData] = useState(
@@ -71,10 +70,13 @@ function App() {
         return <NotFoundCharacter />;
       } else {
         return (
-          <CharacterList
-            characters={cleanedCharacters}
-            searchedName={searchedName}
-          />
+          <>
+            <CharacterList
+              characters={cleanedCharacters}
+              searchedName={searchedName}
+            />
+            <ArrowIcon />
+          </>
         );
       }
     }

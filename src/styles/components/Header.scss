@@ -19,3 +19,8 @@
     color: #d3a625;
   }
 }
+.header__icon:hover {
+  transform: scale(1.5);
+  transition: 0.3s;
+  color: #740001;
+}
