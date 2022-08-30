@@ -2,7 +2,7 @@ import logoHP from '../images/logoHP.png';
 import '../styles/components/Header.scss';
 function Header() {
   return (
-    <header className="header">
+    <header id="header" className="header">
       <img
         className="header__img"
         src={logoHP}
