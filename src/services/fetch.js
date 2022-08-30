@@ -1,14 +1,34 @@
-// import { v4 as uuid } from 'uuid';
 import defaultImage from '../images/HP.png';
 import translation from './translations.json';
+import defaultImageGryffindor from '../images/gryffindor.jpeg';
+import defaultImageSlytherin from '../images/slytherin.jpeg';
+import defaultImageRavenclaw from '../images/ravenclaw.jpeg';
+import defaultImageHufflepuff from '../images/hufflepuff.jpeg';
 
+function getImagesByHouse(characterHouse) {
+  switch (characterHouse) {
+    case 'Gryffindor':
+      return defaultImageGryffindor;
+    case 'Slytherin':
+      return defaultImageSlytherin;
+    case 'Hufflepuff':
+      return defaultImageHufflepuff;
+    case 'Ravenclaw':
+      return defaultImageRavenclaw;
+    default:
+      return defaultImage;
+  }
+}
 const getCharacters = () => {
   return fetch('http://hp-api.herokuapp.com/api/characters/')
     .then((response) => response.json())
     .then((data) => {
       const dataClean = data.map((character, i) => {
         return {
-          img: character.image === '' ? defaultImage : character.image,
+          img:
+            character.image === ''
+              ? getImagesByHouse(character.house)
+              : character.image,
           name: character.name,
           id: i.toString(),
           species: translation[character.species],
@@ -20,12 +40,6 @@ const getCharacters = () => {
       });
       return dataClean;
     });
-
-  // const func = async () =>  {
-  // const response1 = await fetch(UL);
-  // const data = await response1.json()
-  // retrun data.maip()
-  // }
 };
 
 export default getCharacters;
