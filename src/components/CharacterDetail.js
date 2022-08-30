@@ -41,7 +41,7 @@ function CharacterDetail({ characterData, characterId, selectedHouse }) {
             alt={character.name}
             title={character.name}
           />
-          <div className={`${selectedHouse} main__details--container`}>
+          <div className={`${character.house} main__details--container`}>
             <h3 className="main__details--name">{character.name}</h3>
             <p>Estado: {characterStatus()}</p>
             <p>Actor: {character.actor}</p>

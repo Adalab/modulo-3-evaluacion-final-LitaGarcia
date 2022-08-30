@@ -34,7 +34,7 @@ const getCharacters = () => {
           species: translation[character.species],
           house: character.house === '' ? 'Desconocida' : character.house,
           gender: translation[character.gender],
-          actor: character.actor,
+          actor: character.actor === '' ? 'Desconocido' : character.actor,
           alive: character.alive ? 'Con vida' : 'Sin vida',
         };
       });
