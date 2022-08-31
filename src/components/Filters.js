@@ -3,6 +3,7 @@ import FilterByHouse from './FilterByHouse';
 import FilterByGender from './FilterByGender';
 import { PropTypes } from 'prop-types';
 import ResetButton from './ResetButton';
+import HogwartsStudents from './FilterByStudent';
 import '../styles/components/Filters.scss';
 
 function Filters(props) {
@@ -25,6 +26,10 @@ function Filters(props) {
       <FilterByGender
         handleInputRadio={props.handleInputRadio}
         selectedGender={props.selectedGender}
+      />
+      <HogwartsStudents
+        handleInputCheckbox={props.handleInputCheckbox}
+        isHogwartsStudent={props.isHogwartsStudent}
       />
       <ResetButton
         handleInputText={props.handleInputText}

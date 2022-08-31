@@ -24,6 +24,7 @@ const getCharacters = () => {
     .then((response) => response.json())
     .then((data) => {
       const dataClean = data.map((character, i) => {
+        console.log(character.hogwartsStudent);
         return {
           img:
             character.image === ''
@@ -36,8 +37,10 @@ const getCharacters = () => {
           gender: translation[character.gender],
           actor: character.actor === '' ? 'Desconocido' : character.actor,
           alive: character.alive ? 'Con vida' : 'Sin vida',
+          isHogwartsStudent: character.hogwartsStudent,
         };
       });
+
       return dataClean;
     });
 };

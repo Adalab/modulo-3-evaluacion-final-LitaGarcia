@@ -19,6 +19,7 @@ function App() {
   const [selectedHouse, setSelectedHouse] = useState('Gryffindor');
   const [selectedGender, setSelectedGender] = useState('all');
   const [isLoading, setIsLoading] = useState(false);
+  const [isHogwartsStudent, setIsHogwartsStudent] = useState(false);
 
   const houses = characterData
     .filter((character) => character.house !== '')
@@ -28,6 +29,9 @@ function App() {
   // const addAllOption = <option value="all">Todas</option>;
   // allHouses.push(addAllOption);
 
+  const handleInputCheckbox = (value) => {
+    setIsHogwartsStudent(value);
+  };
   useEffect(() => {
     setIsLoading(true);
 
@@ -48,6 +52,7 @@ function App() {
   };
 
   const cleanedCharacters = characterData
+
     .filter((character) => {
       return character.name.toLowerCase().includes(searchedName.toLowerCase());
     })
@@ -60,6 +65,9 @@ function App() {
       } else {
         return character.gender === selectedGender;
       }
+    })
+    .filter((character) => {
+      return isHogwartsStudent;
     });
 
   const { pathname } = useLocation();
@@ -103,6 +111,8 @@ function App() {
                 selectedHouse={selectedHouse}
                 handleInputRadio={handleInputRadio}
                 selectedGender={selectedGender}
+                isHogwartsStudent={isHogwartsStudent}
+                handleInputCheckbox={handleInputCheckbox}
               />
 
               <section>{renderComponents()}</section>
