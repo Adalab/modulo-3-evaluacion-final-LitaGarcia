@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "./static/css/main.bb404202.css",
-    "main.js": "./static/js/main.15e3a1c9.js",
+    "main.js": "./static/js/main.8420a123.js",
     "static/media/gryffindor.jpeg": "./static/media/gryffindor.445fbc29cf9ca5d650e5.jpeg",
     "static/media/ravenclaw.jpeg": "./static/media/ravenclaw.7d43252878cd9e7a1041.jpeg",
     "static/media/logoHP.png": "./static/media/logoHP.462c8d4b2b51b0b33948.png",
@@ -10,10 +10,10 @@
     "static/media/HP.png": "./static/media/HP.344e0d6f1b3a1b100bf5.png",
     "index.html": "./index.html",
     "main.bb404202.css.map": "./static/css/main.bb404202.css.map",
-    "main.15e3a1c9.js.map": "./static/js/main.15e3a1c9.js.map"
+    "main.8420a123.js.map": "./static/js/main.8420a123.js.map"
   },
   "entrypoints": [
     "static/css/main.bb404202.css",
-    "static/js/main.15e3a1c9.js"
+    "static/js/main.8420a123.js"
   ]
 }
